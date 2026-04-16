@@ -1,0 +1,261 @@
+/* Base Resets & Variables */
+:root {
+  --primary-color: #1254A8; /* Deep Royal Blue from the logo text and ring */
+  --secondary-color: #F0F6FC; /* Soft faint blue for background */
+  --accent-color: #DE5323; /* Vibrant Orange-Red from the logo figures */
+  --text-dark: #0B1C33; /* Dark navy for text */
+  --text-light: #FDFDFD;
+  --surface-bg: #FFFFFF;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sinhala);
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at top, var(--surface-bg) 0%, transparent 100%);
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.sinhala-heading {
+  font-family: var(--font-sinhala);
+  font-weight: 800;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-primary { color: var(--primary-color); }
+.text-accent { color: var(--accent-color); }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 2rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+
+/* Components */
+.hero-card {
+  text-align: center;
+  border-top: 5px solid var(--primary-color);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.hero-logo {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 600;
+  color: var(--accent-color);
+  opacity: 0.95;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+/* Sections */
+.content-wrapper {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-card {
+  background: var(--surface-bg);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 1rem;
+}
+
+.section-title span {
+  font-size: 2.5rem;
+}
+
+/* Programs List */
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.program-item {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--primary-color);
+  transition: transform 0.2s ease;
+}
+
+.program-item:hover {
+  transform: scale(1.01);
+}
+
+.program-date {
+  font-weight: 700;
+  color: var(--accent-color);
+  min-width: 120px;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.program-details {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+/* Blessings grid */
+.blessings-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.blessing-card {
+  flex: 1;
+  min-width: 250px;
+  background: linear-gradient(135deg, rgba(222, 83, 35, 0.05) 0%, rgba(18, 84, 168, 0.05) 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(18, 84, 168, 0.2);
+}
+
+.blessing-card h4 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.blessing-card p {
+  font-size: 1.1rem;
+}
+
+/* Contributors Grid */
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contributor-item {
+  background: var(--surface-bg);
+  border: 1px solid var(--secondary-color);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.contributor-item:hover {
+  background: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.contributor-item.main {
+  background: rgba(18, 84, 168, 0.1);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: auto;
+  border-radius: 40px 40px 0 0;
+}
+
+.footer-contact {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-top: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-logo { height: 100px; width: 100px; }
+  .content-wrapper { padding: 2rem 1rem; }
+  .section-card { padding: 1.5rem 1rem; }
+  .section-title { font-size: 1.6rem; flex-direction: column; text-align: center; }
+  .program-item { flex-direction: column; gap: 0.5rem; border-left: none; border-top: 5px solid var(--primary-color); }
+  .blessings-grid { flex-direction: column; gap: 1rem; }
+  .footer { padding: 2rem 1rem; }
+  .footer-contact { font-size: 1.8rem; }
+}
